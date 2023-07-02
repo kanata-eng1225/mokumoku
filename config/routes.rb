@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       get :future
       get :past
     end
-    resource :attendance, only: %i[create destroy], module: :events
+    resource :attendance, only: %i[create destroy show], module: :events
     resource :bookmark, only: %i[create destroy], module: :events
     resources :comments, only: %i[create destroy], module: :events
   end
