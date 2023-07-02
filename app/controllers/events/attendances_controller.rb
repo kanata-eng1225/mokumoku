@@ -25,7 +25,7 @@ class Events::AttendancesController < ApplicationController
     # @attendee = Attendee.find(params[:id])
     @attendee = User.find(params[:id])
     # @attendee = Event::Attendee.find(params[:id])
-    binding.pry
+    # binding.pry
     # @attendee = @event.attendees.find_by(user_id: params[:user_id])
   end
 end
