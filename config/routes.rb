@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :relationships, only: [:create, :destroy]
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'events/index'
   root 'events#index'
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
       get :future
       get :past
     end
-    resource :attendance, only: %i[create destroy], module: :events
+    resource :attendance, only: %i[create destroy show], module: :events
     resource :bookmark, only: %i[create destroy], module: :events
     resources :comments, only: %i[create destroy], module: :events
   end
