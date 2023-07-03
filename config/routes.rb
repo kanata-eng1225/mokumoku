@@ -2,8 +2,6 @@
 
 Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
-  get 'relationships/followings'
-  get 'relationships/followers'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'events/index'
   root 'events#index'

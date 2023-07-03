@@ -6,10 +6,8 @@ class Mypage::ProfilesController < Mypage::BaseController
   end
 
   def update
-    # binding.pry
     @user = User.find(current_user.id)
     if @user.update(profile_params)
-      # binding.pry
       redirect_to mypage_profile_path, success: 'プロフィールを更新しました'
     else
       render :show
